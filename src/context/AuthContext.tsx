@@ -47,7 +47,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const login = async (email: string, password: string) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/login', {
+      const response = await axios.post('https://invenso.onrender.com/api/auth/login', {
         email,
         password
       });
@@ -65,7 +65,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
 
   const register = async (email: string, password: string, name: string, warehouseName: string) => {
     try {
-      const response = await axios.post('http://localhost:4000/api/auth/register', {
+      const response = await axios.post('https://invenso.onrender.com/api/auth/register', {
         email,
         password,
         name,
