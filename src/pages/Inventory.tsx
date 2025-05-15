@@ -12,7 +12,7 @@ interface Item {
 
 export default function Inventory() {
   const [items, setItems] = useState<Item[]>([]);
-  const [newItem, setNewItem] = useState({ name: '', quantity: '', price: '' });
+  const [newItem, setNewItem] = useState({ name: '', quantity: 0, price: 0 });
   const [loading, setLoading] = useState(true);
   const [restockQuantities, setRestockQuantities] = useState<{ [key: string]: number }>({});
 
