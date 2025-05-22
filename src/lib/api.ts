@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = 'https://inventorymanagement-cf18.onrender.com/api';
+const API_URL = process.env.API_URL;
 
 const api = {
   setToken: (token: string) => {
