@@ -21,7 +21,7 @@ export const sendVerificationEmail = async (user, verificationToken) => {
       <p>Thank you for registering. Please click the link below to verify your email:</p>
       <a href="${verificationLink}">Verify Email</a>
       <p>This link will expire in 24 hours.</p>
-      <b><p>Use gmail website if the link is not active</p></b>
+      <p>Use Gmail website if the link is not active</p>
     `
   };
 
