@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendVerificationEmail = async (user, verificationToken) => {
-  const verificationLink = `https://inventorymanagement-cf18.onrender.com/api/auth/verify/${verificationToken}`;
+  const verificationLink = `https://invenso-1.onrender.com/api/auth/verify/${verificationToken}`;
   
   const mailOptions = {
     from: process.env.EMAIL_USER,
@@ -19,7 +19,7 @@ export const sendVerificationEmail = async (user, verificationToken) => {
       <h1>Email Verification</h1>
       <p>Dear ${user.name},</p>
       <p>Thank you for registering. Please click the link below to verify your email:</p>
-      <p>https://inventorymanagement-cf18.onrender.com/api/auth/verify/${verificationToken}</p>
+      <p>https://invenso-1.onrender.com/api/auth/verify/${verificationToken}</p>
       <p>This link will expire in 24 hours.</p>
       <p>Use Gmail website if the link is not active</p>
     `
