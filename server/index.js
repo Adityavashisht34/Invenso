@@ -59,7 +59,7 @@ app.get('/api/auth/verify/:token', async (req, res) => {
     });
 
     if (!user) {
-      return res.status(400).json({ error: 'Verified' });
+      return res.status(400).json({ error: 'Invalid or expired verification token' });
     }
 
     user.isVerified = true;
@@ -67,7 +67,7 @@ app.get('/api/auth/verify/:token', async (req, res) => {
     user.verificationTokenExpires = undefined;
     await user.save();
 
-    res.redirect(`${process.env.FRONTEND_URL}/login?verified=true`);
+    res.redirect(`${process.env.FRONTEND_URL}/login`);
   } catch (error) {
     console.error('Verification error:', error);
     res.status(400).json({ error: error.message });
