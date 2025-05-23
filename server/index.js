@@ -28,7 +28,10 @@ app.post('/api/auth/register', async (req, res) => {
     // Create verification token
     const verificationToken = crypto.randomBytes(20).toString('hex');
     const verificationTokenExpires = new Date(Date.now() + 86400000); // 24 hours
-    
+    const checkUser = User.findOne({email});
+    if(checkUser){
+      return res.status(400).json({message: 'Email already exists'});
+    }
     const user = new User({
       email,
       password,

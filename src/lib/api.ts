@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.API_URL;
+const API_URL ="https://invenso-1.onrender.com/api";
 
 const api = {
   setToken: (token: string) => {

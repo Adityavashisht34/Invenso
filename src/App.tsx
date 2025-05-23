@@ -23,50 +23,49 @@ function App() {
   const { user } = useAuth();
 
   return (
-    // <Router>
-    //   <div className="min-h-screen bg-gray-100">
-    //     {user && <Navbar />}
-    //     <Routes>
-    //       <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
-    //       <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
-    //       <Route path="/forgot-password" element={!user ? <ForgotPassword /> : <Navigate to="/" />} />
-    //       <Route path="/reset-password/:token" element={!user ? <ResetPassword /> : <Navigate to="/" />} />
-    //       <Route
-    //         path="/"
-    //         element={
-    //           <PrivateRoute>
-    //             <Dashboard />
-    //           </PrivateRoute>
-    //         }
-    //       />
-    //       <Route
-    //         path="/dashboard"
-    //         element={
-    //           <PrivateRoute>
-    //             <Dashboard />
-    //           </PrivateRoute>
-    //         }
-    //       />
-    //       <Route
-    //         path="/inventory"
-    //         element={
-    //           <PrivateRoute>
-    //             <Inventory />
-    //           </PrivateRoute>
-    //         }
-    //       />
-    //       <Route
-    //         path="/sales"
-    //         element={
-    //           <PrivateRoute>
-    //             <Sales />
-    //           </PrivateRoute>
-    //         }
-    //       />
-    //     </Routes>
-    //   </div>
-    // </Router>
-    <div>Problem encountered with Vercel, App will be back soon</div>
+    <Router>
+      <div className="min-h-screen bg-gray-100">
+        {user && <Navbar />}
+        <Routes>
+          <Route path="/login" element={!user ? <Login /> : <Navigate to="/" />} />
+          <Route path="/register" element={!user ? <Register /> : <Navigate to="/" />} />
+          <Route path="/forgot-password" element={!user ? <ForgotPassword /> : <Navigate to="/" />} />
+          <Route path="/reset-password/:token" element={!user ? <ResetPassword /> : <Navigate to="/" />} />
+          <Route
+            path="/"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/dashboard"
+            element={
+              <PrivateRoute>
+                <Dashboard />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/inventory"
+            element={
+              <PrivateRoute>
+                <Inventory />
+              </PrivateRoute>
+            }
+          />
+          <Route
+            path="/sales"
+            element={
+              <PrivateRoute>
+                <Sales />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
