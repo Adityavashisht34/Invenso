@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = import.meta.env.VITE_API_URL || "https://invenso-1.onrender.com/api";
+const API_URL = import.meta.env.VITE_API_URL || "/api";
 
 const api = {
   setToken: (token: string) => {

@@ -10,7 +10,7 @@ export default function ForgotPassword() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      const API_URL = import.meta.env.VITE_API_URL || 'https://invenso-1.onrender.com';
+      const API_URL = import.meta.env.VITE_API_URL || '';
       await axios.post(`${API_URL}/api/auth/forgot-password`, { email });
       setMessage('Password reset link has been sent to your email');
       setError('');

@@ -9,7 +9,7 @@ const transporter = nodemailer.createTransport({
 });
 
 export const sendVerificationEmail = async (user, verificationToken) => {
-  const verificationLink = `${process.env.BACKEND_URL || 'https://invenso-1.onrender.com'}/api/auth/verify/${verificationToken}`;
+  const verificationLink = `${process.env.BACKEND_URL}/api/auth/verify/${verificationToken}`;
   
   const mailOptions = {
     from: process.env.EMAIL_USER,
