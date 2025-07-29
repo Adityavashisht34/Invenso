@@ -19,7 +19,8 @@ export default function ResetPassword() {
     }
 
     try {
-      await axios.post(`https://invenso-1.onrender.com/api/auth/reset-password/${token}`, {
+      const API_URL = import.meta.env.VITE_API_URL || 'https://invenso-1.onrender.com';
+      await axios.post(`${API_URL}/api/auth/reset-password/${token}`, {
         password
       });
       setMessage('Password reset successful. Redirecting to login...');

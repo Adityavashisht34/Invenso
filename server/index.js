@@ -28,8 +28,8 @@ app.post('/api/auth/register', async (req, res) => {
     // Create verification token
     const verificationToken = crypto.randomBytes(20).toString('hex');
     const verificationTokenExpires = new Date(Date.now() + 86400000); // 24 hours
-    const checkUser = User.findOne({email});
-    if(await checkUser){
+    const checkUser = await User.findOne({email});
+    if(checkUser){
       return res.status(400).json({message: 'Email already exists'});
     }
     const user = new User({
@@ -67,7 +67,7 @@ app.get('/api/auth/verify/:token', async (req, res) => {
     user.verificationTokenExpires = undefined;
     await user.save();
 
-    res.redirect(`${process.env.FRONTEND_URL}/login`);
+    res.redirect(`${process.env.FRONTEND_URL}/login?verified=true`);
   } catch (error) {
     console.error('Verification error:', error);
     res.status(400).json({ error: error.message });
