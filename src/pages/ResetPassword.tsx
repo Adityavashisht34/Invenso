@@ -19,7 +19,7 @@ export default function ResetPassword() {
     }
 
     try {
-      await axios.post(`https://inventorymanagement-cf18.onrender.com/api/auth/reset-password/${token}`, {
+      await axios.post(`https://invenso-1.onrender.com/api/auth/reset-password/${token}`, {
         password
       });
       setMessage('Password reset successful. Redirecting to login...');

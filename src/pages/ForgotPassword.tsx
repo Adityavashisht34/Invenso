@@ -10,7 +10,7 @@ export default function ForgotPassword() {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     try {
-      await axios.post('https://inventorymanagement-cf18.onrender.com/api/auth/forgot-password', { email });
+      await axios.post('https://invenso-1.onrender.com/api/auth/forgot-password', { email });
       setMessage('Password reset link has been sent to your email');
       setError('');
     } catch (err) {
